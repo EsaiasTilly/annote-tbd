@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Annote</title>
+    <meta charset="UTF-8" />
+    <style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+		* {
+			user-select: none;
+		}
+		body {
+			background: #000;
+			font-family: 'Source Code Pro', monospace;
+			color: #faf6e6;
+		}
+		svg {
+			position: fixed;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+			height: 100%;
+			max-height: 35em;
+		}
+		p {
+			position: fixed;
+			left: 50%;
+			bottom: 1em;
+			transform: translate(-50%, -50%);
+		}
+    </style>
+  </head>
+  <body>
+    <?xml version="1.0" encoding="utf-8"?>
+    <svg
+		version="1.1"
+		xmlns="http://www.w3.org/2000/svg"
+		xmlns:xlink="http://www.w3.org/1999/xlink"
+		x="0px"
+		y="0px"
+		viewBox="0 0 1024 768"
+		style="enable-background: new 0 0 1024 768"
+		xml:space="preserve"
+    >
+      <style type="text/css">
+        .st0 {
+          fill: #bd3556;
+        }
+        .st1 {
+          fill: #462930;
+        }
+        .st2 {
+          fill: #2b292a;
+        }
+        .st3 {
+          fill: #2e2d2e;
+        }
+        .st4 {
+          fill: #323232;
+        }
+        .st5 {
+          fill: #353636;
+        }
+      </style>
+      <g id="Layer_2">
+        <rect width="1024" height="768" />
+      </g>
+      <g id="Title">
+        <path
+          id="path77379"
+          class="st0"
+          d="M158.7,319.7h-35.8L66.2,448.3h37.1l10.1-25l10.6-26.8l16.5-41.1l16.5,41.1l10.6,26.8l10.1,25
+		h37.8L158.7,319.7z"
+        />
+        <path
+          id="path77381"
+          class="st1"
+          d="M238.7,448.3h35.6v-21.7l-35.6-45.3V448.3z M325.4,319.7v23.3l35.6,43v-66.3H325.4z
+		 M325.4,388.2l-56.7-68.5h-29.9v17.1l35.6,43l56.7,68.5H361v-14.9L325.4,388V388.2z"
+        />
+        <path
+          id="path77383"
+          class="st2"
+          d="M399.5,448.3h35.6v-21.7l-35.6-45.3V448.3z M486.2,319.7v23.3l35.6,43v-66.3H486.2z
+		 M486.2,388.2l-56.7-68.5h-29.9v17.1l35.6,43l56.7,68.5h29.9v-14.9L486.2,388V388.2z"
+        />
+        <path
+          id="path77385"
+          class="st3"
+          d="M588.5,442.2c10.8,5.9,23.1,8.6,36.7,8.6s25.7-2.8,36.5-8.6c10.8-5.7,19.3-13.6,25.5-23.9
+		c6.2-10.1,9.4-21.5,9.4-34.3c0-12.7-3.1-24.1-9.4-34.3c-6.2-10.1-14.7-18-25.5-23.9c-10.8-5.7-23-8.6-36.5-8.6s-25.9,2.9-36.7,8.6
+		c-10.8,5.9-19.3,13.8-25.5,23.9c-6.2,10.3-9.2,21.7-9.2,34.3c0,12.9,2.9,24.2,9.2,34.3C569.2,428.6,577.7,436.5,588.5,442.2z
+		 M642.8,416.1c-5.3,3.1-11.2,4.6-17.6,4.6c-6.6,0-12.5-1.5-17.6-4.6c-5.3-2.9-9.5-7.3-12.5-12.9c-3.1-5.5-4.6-11.9-4.6-19.3
+		c0-7.2,1.5-13.6,4.6-19.1c2.9-5.5,7.2-9.9,12.5-13c5.1-2.9,11-4.6,17.6-4.6c6.4,0,12.3,1.7,17.6,4.6c5.1,3.1,9.4,7.5,12.5,13
+		c2.9,5.5,4.6,11.9,4.6,19.1c0,7.3-1.7,13.8-4.6,19.3C652.2,408.8,648,413.2,642.8,416.1z"
+        />
+        <path
+          id="path77387"
+          class="st4"
+          d="M754,348.6v99.7h36.4v-99.7h39.3v-28.8H714.5v28.8H754z"
+        />
+        <path
+          id="path77389"
+          class="st5"
+          d="M957.8,319.7H855.9v28.1h101.9V319.7z M957.8,369.5H855.9v27.2h101.9V369.5z M855.9,420.2v28.1
+		h101.9v-28.1H855.9z"
+        />
+      </g>
+    </svg>
+	<p id="sub"></p>
+	<script type="text/javascript">
+		const completeString = ('Under construction.¤ ¤Coming soon.').split('');
+		const par = document.querySelector('#sub');
+		const nextCharacter = (i, a) => {
+			if(i == completeString.length) return;
+			if(completeString[i] != '¤') {
+				a += completeString[i];
+				par.innerText = a;
+			}
+			let time = (completeString[i] != '¤' ? 100 : 500) * (1 + 1 * Math.random());
+			setTimeout(() => { nextCharacter(i + 1, a); }, time);
+		};
+		window.addEventListener('load', () => {
+			setTimeout(() => { nextCharacter(0, ''); }, 1000);
+		});
+	</script>
+  </body>
+</html>
+
